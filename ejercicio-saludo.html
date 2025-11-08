@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Saludo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fondo de la página, texto en negro, botón azul */
+        body {
+            background-color: #0a79db;
+            /* color de la página */
+            color: #000;
+            /* texto negro */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h1,
+        p,
+        label,
+        input,
+        button {
+            color: #000;
+            /* aseguramos texto negro */
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        #boton {
+            background-color: #1e6fff;
+            /* botón azul */
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Programa de saludo 👋</h1>
+
+    <input type="text" id="nombre" placeholder="Escribí tu nombre">
+    <button id="boton">Saludar</button>
+
+    <p id="saludo"></p>
+
+    <script>
+        const boton = document.getElementById('boton');
+        const input = document.getElementById('nombre');
+        const saludo = document.getElementById('saludo');
+
+        boton.addEventListener('click', () => {
+            const nombre = input.value.trim();
+            if (nombre) {
+                saludo.textContent = `¡Hola, ${nombre}! 👋`;
+            } else {
+                saludo.textContent = 'Por favor, escribí tu nombre.';
+            }
+        });
+    </script>
+</body>
+
+</html>
